@@ -1,0 +1,185 @@
+html, body {
+    margin:0;
+    padding:0;
+    font-size:1em;
+    height:100%;
+}
+div.fold {
+    position:absolute;
+    top:50%;
+    left:50%;
+}
+div.fold:not(:required) {
+    animation: 3.5s ease-in-out 0s infinite fold-base;
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    overflow: hidden;
+    position: relative;
+    text-indent: -9999px;
+    background: tomato; /* light red */
+    border-radius: 2em;
+    transform: rotateZ(90deg);
+    transform-origin: 50% 50% 0;
+}
+div.fold:not(:required):after {
+    animation: 3.5s linear 0s infinite fold-up;
+    border-radius: 2em 0 0 2em;
+    background: tomato; /* light red */
+    content: "";
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 50%;
+    top: 0;
+    transform-origin: 100% 50% 0;
+}
+div.fold:not(:required):before {
+    animation: 3.5s linear 0s infinite fold-down;
+    border-radius: 2em 0 0 2em;
+    background: yellowgreen; /* light yellow */
+    content: "";
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform-origin: 100% 50% 0;
+}
+
+@-moz-keyframes fold-base {
+0% {
+    background: tomato; /* light red */
+    transform: rotateZ(180deg);
+}
+25% {
+    animation-timing-function: step-start;
+    background: tomato; /* light red */
+    transform: rotateZ(180deg);
+}
+27.5% {
+    background: yellowgreen; /* light green */
+    transform: rotateZ(90deg);
+}
+50% {
+    animation-timing-function: step-start;
+    background: yellowgreen; /* light green */
+    transform: rotateZ(90deg);
+}
+52.5% {
+    background: yellowgreen; /* light green */
+    transform: rotateZ(0deg);
+}
+75% {
+    animation-timing-function: step-start;
+    background: yellowgreen; /* light green */
+    transform: rotateZ(0deg);
+}
+77.5% {
+    background: tomato; /* light red */
+    transform: rotateZ(270deg);
+}
+100% {
+    animation-timing-function: step-start;
+    background: tomato; /* light red */
+    transform: rotateZ(270deg);
+}
+}
+@-moz-keyframes fold-up {
+2.5% {
+    animation-timing-function: ease-in;
+    background: tomato; /* light red */
+    transform: rotateY(0deg);
+}
+13.70% {
+    animation-timing-function: step-start;
+    background: crimson; /* dark red */
+    transform: rotateY(90deg);
+}
+13.71% {
+    animation-timing-function: ease-out;
+    background: orange; /* dark yellow */
+    transform: rotateY(90deg);
+}
+25% {
+    background: gold; /* light yellow */
+    transform: rotateY(180deg);
+}
+27.5% {
+    animation-timing-function: ease-in;
+    background: gold; /* light yellow */
+    transform: rotateY(180deg);
+}
+41% {
+    animation-timing-function: step-start;
+    background: orange; /* dark yellow */
+    transform: rotateY(90deg);
+}
+41.10% {
+    animation-timing-function: ease-out;
+    background: green; /* dark green */
+    transform: rotateY(90deg);
+}
+50% {
+    background: yellowgreen; /* light green */
+    transform: rotateY(0deg);
+}
+52.5% {
+    animation-timing-function: ease-in;
+    background: yellowgreen; /* light green */
+    transform: rotateY(0deg);
+}
+63.75% {
+    animation-timing-function: step-start;
+    background: green; /* dark green */
+    transform: rotateY(90deg);
+}
+63.76% {
+    animation-timing-function: ease-out;
+    background: blue; /* dark blue */
+    transform: rotateY(90deg);
+}
+75% {
+    background: cornflowerblue; /* light blue */
+    transform: rotateY(180deg);
+}
+77.5% {
+    animation-timing-function: ease-in;
+    background: cornflowerblue; /* light blue */
+    transform: rotateY(180deg);
+}
+90.25% {
+    animation-timing-function: step-start;
+    background: blue; /* dark blue */
+    transform: rotateY(90deg);
+}
+90.26% {
+    animation-timing-function: ease-in;
+    background: crimson; /* dark red */
+    transform: rotateY(90deg);
+}
+100% {
+    animation-timing-function: step-start;
+    background: tomato; /* light red */
+    transform: rotateY(0deg);
+}
+}
+@-moz-keyframes fold-down {
+0% {
+    animation-timing-function: step-start;
+    background: gold; /* light yellow */
+}
+50% {
+    animation-timing-function: step-start;
+    background: gold; /* light yellow */
+}
+75% {
+    animation-timing-function: step-start;
+    background: cornflowerblue; /* light blue */
+}
+100% {
+    animation-timing-function: step-start;
+    background: cornflowerblue; /* light blue */
+}
+}
+
